@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Bulk Exporter for Descript</title>
+  <meta name="description" content="How Bulk Exporter for Descript handles your Descript API token and transcript data.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bulk Exporter for Descript">
+  <meta property="og:title" content="Privacy Policy — Bulk Exporter for Descript">
+  <meta property="og:description" content="How Bulk Exporter for Descript handles your Descript API token and transcript data.">
+  <meta property="og:url" content="https://distortion0.github.io/bulk-exporter-site/privacy.html">
+  <meta property="og:locale" content="en_US">
+  <link rel="icon" type="image/svg+xml" href="assets/brand-mark.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/brand-mark.svg" alt="" width="32" height="32">
+        <span>Bulk Exporter for Descript</span>
+      </a>
+      <nav aria-label="Primary">
+        <a class="nav-link" href="privacy.html" aria-current="page">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="policy">
+    <article class="container container--narrow">
+      <p class="back-link"><a href="index.html"><span aria-hidden="true">←</span> Back to home</a></p>
+
+      <h1>Privacy Policy</h1>
+      <p class="policy-meta">Last updated: <time datetime="2026-10-05">October 5, 2026</time></p>
+
+      <div class="policy-body">
+        <p>This Privacy Policy explains how Bulk Exporter for Descript (the “extension”) handles information when you use it. It also covers this website. “We”, “us” and “our” refer to the developer of the extension. The extension is an independent product and is not affiliated with Descript.</p>
+
+        <section class="summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Summary</h2>
+          <ul>
+            <li>Your Descript API token is stored locally in your browser.</li>
+            <li>Transcripts are retrieved directly from Descript’s API and processed locally by the extension.</li>
+            <li>We do not collect your transcript content, and we do not currently operate a backend or database for the extension.</li>
+            <li>The extension does not currently use analytics or tracking.</li>
+          </ul>
+        </section>
+
+        <h2>What the extension does</h2>
+        <p>Bulk Exporter for Descript is a Chrome extension for exporting transcripts from multiple Descript projects at once. You connect it with your own Descript API token, search and select the projects you want to export, choose a transcript format (TXT, Markdown, DOCX or SRT), and download the result as one organized ZIP file.</p>
+
+        <h2>Your Descript API token</h2>
+        <p>To use the extension, you provide your own Descript API token. The extension saves the token locally in your browser using Chrome’s <code>chrome.storage.local</code> extension storage, so you do not have to enter it each time.</p>
+        <p>The token is used only to authenticate the extension’s requests to Descript’s API. It is sent to Descript’s API as part of those requests. It is not sent to us.</p>
+        <p>You can remove your saved API token at any time through the extension’s Settings.</p>
+
+        <h2>Communication with Descript’s API</h2>
+        <p>The extension communicates directly with Descript’s API at <code>https://descriptapi.com</code>. Requests go from your browser to Descript’s API. They do not pass through servers operated by us.</p>
+        <p>The extension uses the API to load your projects and to retrieve the transcripts of the projects you choose to export.</p>
+
+        <h2>Transcript processing and ZIP generation</h2>
+        <p>Transcript data retrieved from Descript’s API is processed locally by the extension, in your browser. The extension converts the transcripts to the format you chose and generates the ZIP file locally on your device. The ZIP file is then downloaded to your device, where it remains under your control.</p>
+        <p>We do not collect, receive or store your transcript content.</p>
+
+        <h2>Local storage</h2>
+        <p>The extension uses <code>chrome.storage.local</code>, a storage area that Chrome provides to extensions, to keep information it needs on your device, such as your saved Descript API token. Data in <code>chrome.storage.local</code> is stored within your Chrome profile on your device. It is not sent to us.</p>
+
+        <h2>Information we do not collect</h2>
+        <ul>
+          <li><strong>Transcript content.</strong> We do not collect, receive or store the content of your transcripts.</li>
+          <li><strong>Your API token.</strong> Your Descript API token is not sent to us.</li>
+          <li><strong>Analytics or tracking data.</strong> The extension does not currently use analytics or tracking.</li>
+          <li><strong>Server-side data.</strong> We do not currently operate a backend server or database for the extension, so the data it handles is not transmitted to or stored on systems operated by us.</li>
+        </ul>
+
+        <h2>Payments and licensing</h2>
+        <p>The extension does not currently include payment or licensing functionality. If that changes, this policy will be updated to cover it.</p>
+
+        <h2>Permissions</h2>
+        <p>The extension currently uses the following Chrome permissions:</p>
+        <ul>
+          <li><code>storage</code> — to save your Descript API token locally using <code>chrome.storage.local</code>.</li>
+          <li>Host access to <code>https://descriptapi.com/*</code> — to send requests directly to Descript’s API.</li>
+        </ul>
+
+        <h2>Third-party service: Descript API</h2>
+        <p>The extension relies on Descript’s API, a third-party service operated by Descript. When you use the extension, your browser sends requests to Descript’s API, including your API token, and Descript returns your project and transcript data.</p>
+        <p>Descript’s handling of that information is governed by Descript’s own terms and privacy policy, not by this policy. We do not control Descript’s services.</p>
+
+        <h2>Removing your data</h2>
+        <ul>
+          <li>You can remove your saved API token at any time through the extension’s Settings.</li>
+          <li>Exported ZIP files stay on your device until you delete them.</li>
+          <li>Your API token is issued by Descript. To revoke or replace it, use the options Descript provides.</li>
+        </ul>
+
+        <h2>Data security</h2>
+        <p>The extension is designed so that your API token and transcript data stay on your device, apart from the requests made directly to Descript’s API, which are sent over HTTPS.</p>
+        <p>No method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security. Your saved API token is only as protected as your device and your Chrome profile: anyone with access to them may be able to access it. Treat your API token like a password, remove it through the extension’s Settings when you no longer need it, and revoke it with Descript if you believe it has been exposed.</p>
+
+        <h2>This website</h2>
+        <p>This website does not use our own analytics, tracking scripts or cookies.</p>
+        <p>The website is hosted using GitHub Pages. GitHub, as the hosting provider, may process standard technical request information, such as IP addresses and HTTP request information, according to GitHub’s own privacy practices. We do not control GitHub’s infrastructure or logs.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy as the extension changes. When we do, we will revise the “Last updated” date at the top of this page.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this Privacy Policy or the extension, contact us at <a href="mailto:riptmy@gmail.com">riptmy@gmail.com</a>.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Bulk Exporter for Descript</p>
+      <p><a href="privacy.html" aria-current="page">Privacy Policy</a></p>
+      <p class="footer-note">Not affiliated with Descript.</p>
+    </div>
+  </footer>
+</body>
+</html>
