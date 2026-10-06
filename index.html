@@ -13,6 +13,9 @@
   <meta property="og:locale" content="en_US">
   <link rel="icon" type="image/svg+xml" href="assets/brand-mark.svg">
   <link rel="stylesheet" href="styles.css">
+  <script src="assets/paddle-config.js" defer></script>
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
+  <script src="assets/checkout.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -54,7 +57,14 @@
           <h1 id="hero-title">Bulk export your Descript transcripts</h1>
           <p class="hero-lead">Export transcripts from multiple Descript projects at once and download them as one organized ZIP.</p>
           <p class="hero-formats">Supports TXT, Markdown, DOCX and SRT.</p>
-          <p class="status"><span class="status-dot" aria-hidden="true"></span>Coming soon to Chrome</p>
+          <div class="hero-actions">
+            <button type="button" id="buy-pro" class="button" disabled aria-describedby="buy-pro-note">Buy Pro — $9.99</button>
+            <p class="status"><span class="status-dot" aria-hidden="true"></span>Coming soon to Chrome</p>
+          </div>
+          <p id="buy-pro-note" class="hero-note">Bulk Exporter Pro is a one-time purchase of $9.99 USD. No subscription. The final price, including any tax, is shown at checkout by Paddle, our payment provider.</p>
+          <p id="checkout-mode" class="checkout-mode" hidden>Test mode: this is a Paddle sandbox checkout. No real payments are taken.</p>
+          <p id="checkout-status" class="checkout-status" role="status" aria-live="polite">Loading checkout…</p>
+          <noscript><p class="checkout-status is-error">JavaScript is required to buy Pro.</p></noscript>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
