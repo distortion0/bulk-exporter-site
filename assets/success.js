@@ -239,13 +239,25 @@
 
   /* --- Start --- */
 
-  function initialize() {
-    if (!config || typeof config.licensingBaseUrl !== "string" ||
-        typeof window.fetch !== "function" || typeof window.AbortController !== "function") {
-      show(MESSAGES.unavailable, "error");
-      return;
-    }
+  function configReady() {
+    return Boolean(config) && typeof config.licensingBaseUrl === "string";
+  }
 
+  /* assets/paddle-config.js is cached on its own (GitHub Pages: max-age=600), so
+   * right after a deploy a browser can run this success.js with the previous
+   * config, which has no licensingBaseUrl. Load the config once more, bypassing
+   * caches, before giving up. */
+  function reloadConfig(done) {
+    var script = document.createElement("script");
+    script.src = "assets/paddle-config.js?fresh=" + Date.now();
+    script.onload = script.onerror = function () {
+      config = window.BULK_EXPORTER_PADDLE;
+      done();
+    };
+    document.head.appendChild(script);
+  }
+
+  function start() {
     var transactionId = savedTransactionId();
     if (!transactionId) {
       show(MESSAGES.reference, "error");
@@ -268,6 +280,25 @@
       }
     });
     startClaim(transactionId);
+  }
+
+  function initialize() {
+    if (typeof window.fetch !== "function" || typeof window.AbortController !== "function") {
+      show(MESSAGES.unavailable, "error");
+      return;
+    }
+    if (configReady()) {
+      start();
+      return;
+    }
+    show(MESSAGES.preparing, "loading");
+    reloadConfig(function () {
+      if (configReady()) {
+        start();
+      } else {
+        show(MESSAGES.unavailable, "error");
+      }
+    });
   }
 
   initialize();
