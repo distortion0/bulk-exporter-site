@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
   <title>Payment completed — Bulk Exporter for Descript</title>
   <meta name="description" content="Your Bulk Exporter Pro payment was completed.">
   <meta name="robots" content="noindex">
@@ -33,11 +34,22 @@
       <p class="hero-lead">Thank you for your purchase. Paddle, our payment provider, will email your receipt to the address you entered at checkout.</p>
 
       <div class="policy-body">
-        <p id="transaction-reference" hidden>Transaction reference: <code id="transaction-id"></code></p>
-
-        <section class="notice" aria-labelledby="activation-title">
-          <h2 id="activation-title">Pro activation is not implemented yet</h2>
-          <p>This checkout runs in Paddle’s sandbox as part of development. During this stage, completing a payment does not unlock or activate anything in the extension.</p>
+        <section class="license" aria-labelledby="license-title">
+          <h2 id="license-title">Your Pro license key</h2>
+          <p class="license-status" id="license-status" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span>
+            <span id="license-message"></span>
+          </p>
+          <div id="license-result" hidden>
+            <div class="license-key-row">
+              <code class="license-key" id="license-key"></code>
+              <button type="button" class="button button--compact" id="license-copy">Copy</button>
+            </div>
+            <p class="license-note">Save this key. You’ll enter it in the extension to unlock Pro.</p>
+          </div>
+          <p class="license-actions" id="license-retry" hidden>
+            <button type="button" class="button" id="license-retry-button">Try again</button>
+          </p>
         </section>
 
         <p><a href="index.html"><span aria-hidden="true">←</span> Back to home</a></p>
